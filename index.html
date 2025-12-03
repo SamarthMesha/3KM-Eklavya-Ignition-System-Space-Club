@@ -29,15 +29,19 @@
             <h2>ACCESS CONTROL</h2>
             <div class="form-group">
                 <label for="username">USERNAME:</label>
-                <input type="text" id="username" placeholder="Enter 2315046">
+                <input type="text" id="username" placeholder="Enter username">
             </div>
             <div class="form-group">
                 <label for="password">PASSWORD:</label>
-                <input type="password" id="password" placeholder="Enter 2315046">
+                <div class="password-wrapper">
+                    <input type="password" id="password" placeholder="Enter password">
+                    <button type="button" class="toggle-password" id="togglePassword">👁️</button>
+                </div>
             </div>
             <div class="button-group">
                 <button class="btn btn-reset" id="resetBtn">RESET</button>
                 <button class="btn btn-login" id="loginBtn">LOGIN</button>
+            </div>
             </div>
         </div>
     </div>

@@ -36,6 +36,16 @@ document.getElementById('continueBtn').addEventListener('click', function() {
     document.getElementById('refreshWarning').classList.remove('active');
 });
 
+// Toggle password visibility
+document.getElementById('togglePassword').addEventListener('click', function() {
+    const passwordInput = document.getElementById('password');
+    const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+    passwordInput.setAttribute('type', type);
+    
+    // Toggle eye icon
+    this.textContent = type === 'password' ? '👁️' : '🔒';
+});
+
 // Login functionality
 document.getElementById('loginBtn').addEventListener('click', function() {
     const username = document.getElementById('username').value;
@@ -58,7 +68,7 @@ document.getElementById('loginBtn').addEventListener('click', function() {
             addLogEntry("Control systems initialized");
         }, 2500);
     } else {
-        alert('Invalid credentials. Use username: 2315046, password: 2315046');
+        alert('Invalid credentials. Please check your username and password.');
     }
 });
 

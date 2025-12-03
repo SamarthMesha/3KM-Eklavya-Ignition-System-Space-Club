@@ -5,29 +5,8 @@ let countdownActive = false;
 let countdownPaused = false;
 let remainingSeconds = 0;
 
-// WiFi Connection Simulation
-function simulateWifiConnection() {
-    const wifiIcon = document.getElementById('wifiIcon');
-    const wifiText = document.getElementById('wifiText');
-    
-    // Start with disconnected state
-    wifiIcon.classList.remove('connected');
-    wifiText.classList.remove('connected');
-    wifiText.textContent = "CONNECTING...";
-    
-    // Simulate connection after 2 seconds
-    setTimeout(() => {
-        wifiIcon.classList.add('connected');
-        wifiText.classList.add('connected');
-        wifiText.textContent = "CONNECTED";
-        addLogEntry("WiFi connection established");
-    }, 2000);
-}
-
-// Initialize WiFi status when page loads
+// Initialize when page loads
 window.addEventListener('load', function() {
-    simulateWifiConnection();
-    
     // Check if there's a countdown in progress in localStorage
     const savedCountdown = localStorage.getItem('countdownActive');
     if (savedCountdown === 'true') {
